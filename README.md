@@ -18,6 +18,7 @@ I ran the application exclusively via Docker, but Documentation for running loca
 
 - Google Geocode API explicitly states no caching is allowed of the data from their services, so interaction with the API strictly occurs through an API Wrapper.
     - Performance could've been increased by caching previously received responses, but this doesn't seem to be allowed.
+    - PlaceID is allowed to be stored, but no performance gains from storing just this
 - Bulk of the 'work' was done in `geocode-api/geocode`
     - The geocode 'service' is a module that contained no real state, so no class encapsulating it
     - `apis.py` defines the endpoints, and outside of parameter validation passes work off to `service.py`

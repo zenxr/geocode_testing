@@ -12,7 +12,18 @@ I ran the application exclusively via Docker, but Documentation for running loca
 
 - Set an environment variable `GEOCODING_API_KEY` with your Geocode API key.
 - `.envs` directory is not included in source control for obvious reasons. `.envs` could be included if the version control system was only accessible internally and requires authorization. Otherwise, these directories would have to be copied to the server running the application. Docker and Django *should* have sane generated defaults outside of setting the Geocode API Key. **I can include the `.envs` directory on request, but will not provide a Google GeoCode API Key**.
-- Provided you have docker set up, `docker-compose -f local.yml up` (development) or `docker-compose -f production.yml up` to run in production mode.
+
+### Initial Setup
+
+Provided docker and docker-compose is installed (replace with production.yml for production release):
+- `docker-compose -f local.yml run django python manage.py makemigrations`
+- `docker-compose -f local.yml run django python manage.py migrate`
+- `docker-compose -f local.yml up`
+
+### Post setup
+
+Provided docker and docker-compose is installed (replace with production.yml for production release):
+- `docker-compose -f local.yml up`
 
 ## Design Considerations
 

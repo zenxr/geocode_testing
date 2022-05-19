@@ -8,7 +8,7 @@ Testing Google Geocode API. This application was built with cookiecutter in orde
 
 ## Running the App
 
-I ran the application exclusively via Docker, but Documentation for running locally is available in Django-Cookiecutter documentation.
+I ran the application exclusively via Docker, but Documentation for running without docker is available in Django-Cookiecutter documentation.
 
 - Set an environment variable `GEOCODING_API_KEY` with your Geocode API key.
 - `.envs` directory is not included in source control for obvious reasons. `.envs` could be included if the version control system was only accessible internally and requires authorization. Otherwise, these directories would have to be copied to the server running the application. Docker and Django *should* have sane generated defaults outside of setting the Geocode API Key. **I can include the `.envs` directory on request, but will not provide a Google GeoCode API Key**.

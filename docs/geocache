@@ -1,0 +1,11 @@
+ .. _geocache:
+
+Geocache
+======================================================================
+
+API endpoint for interactions with geocache capabilities.
+
+.. automodule:: geocache_api.geocache
+   :members:
+   :noindex:
+

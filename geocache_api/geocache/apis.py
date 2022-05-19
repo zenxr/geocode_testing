@@ -16,15 +16,15 @@ class GeoCacheBaseApi(APIView, LoginRequiredMixin):
             'distance': reverse('geocache:distance', request=request)
         }, status=status.HTTP_200_OK)
 
-class AddressSearchApi(APIView):
+class AddressSearchApi(APIView, LoginRequiredMixin):
     def get(self, request):
         address = request.GET.get('address', '')
         if not address or not isinstance(address, str):
             raise ValidationError('Address is a required field, must be urlencoded string in request parameter.')
-        result = service.search_address(address, user = request.user)
+        result = service.search_address(address)
         return Response(data=result, status=status.HTTP_200_OK)
 
-class CoordinateCalculateApi(APIView):
+class CoordinateCalculateApi(APIView, LoginRequiredMixin):
     def get(self, request):
         start = request.GET.get('start', '')
         end = request.GET.get('end', '')

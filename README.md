@@ -39,7 +39,8 @@ Provided docker and docker-compose is installed (replace with production.yml for
 
 - Could add support for API Keys rather than requiring authentication
 - Introduce better use of logging module
-- More robust linking between endpoints to fully meet REST backlink standards, which is often ignored.
+- More robust linking between endpoints to fully meet REST backlink standards, which is often ignored
+- Testing
 
 # Application Information
 

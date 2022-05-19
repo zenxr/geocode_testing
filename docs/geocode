@@ -1,0 +1,11 @@
+ .. _geocode:
+
+Geocode
+======================================================================
+
+API endpoint for interactions with geocode capabilities.
+
+.. automodule:: geocode_api.geocode
+   :members:
+   :noindex:
+

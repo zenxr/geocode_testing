@@ -271,7 +271,7 @@ Session.vim
 tags
 
 ### Project template
-geocache_api/media/
+geocode_api/media/
 
 .pytest_cache/
 .ipython/

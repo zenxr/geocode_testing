@@ -1,16 +1,16 @@
 version: '3'
 
 volumes:
-  geocache_api_local_postgres_data: {}
-  geocache_api_local_postgres_data_backups: {}
+  geocode_api_local_postgres_data: {}
+  geocode_api_local_postgres_data_backups: {}
 
 services:
   django:
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: geocache_api_local_django
-    container_name: geocache_api_local_django
+    image: geocode_api_local_django
+    container_name: geocode_api_local_django
     platform: linux/x86_64
     depends_on:
       - postgres
@@ -28,17 +28,17 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
-    image: geocache_api_production_postgres
-    container_name: geocache_api_local_postgres
+    image: geocode_api_production_postgres
+    container_name: geocode_api_local_postgres
     volumes:
-      - geocache_api_local_postgres_data:/var/lib/postgresql/data:Z
-      - geocache_api_local_postgres_data_backups:/backups:z
+      - geocode_api_local_postgres_data:/var/lib/postgresql/data:Z
+      - geocode_api_local_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.local/.postgres
 
   docs:
-    image: geocache_api_local_docs
-    container_name: geocache_api_local_docs
+    image: geocode_api_local_docs
+    container_name: geocode_api_local_docs
     platform: linux/x86_64
     build:
       context: .
@@ -49,7 +49,7 @@ services:
     volumes:
       - ./docs:/docs:z
       - ./config:/app/config:z
-      - ./geocache_api:/app/geocache_api:z
+      - ./geocode_api:/app/geocode_api:z
     ports:
       - "9000:9000"
     command: /start-docs

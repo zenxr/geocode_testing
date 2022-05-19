@@ -1,9 +1,9 @@
-.. geocache-api documentation master file, created by
+.. geocode-api documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to geocache-api's documentation!
+Welcome to geocode-api's documentation!
 ======================================================================
 
 .. toctree::
@@ -12,9 +12,9 @@ Welcome to geocache-api's documentation!
 
    howto
    users
-   geocache_service
-   geocache_utils
-   geocache_classes
+   geocode_service
+   geocode_utils
+   geocode_classes
 
 
 Indices and tables

@@ -1,5 +1,5 @@
 """
-ASGI config for geocache-api project.
+ASGI config for geocode-api project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -14,9 +14,9 @@ from pathlib import Path
 from django.core.asgi import get_asgi_application
 
 # This allows easy placement of apps within the interior
-# geocache_api directory.
+# geocode_api directory.
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent
-sys.path.append(str(ROOT_DIR / "geocache_api"))
+sys.path.append(str(ROOT_DIR / "geocode_api"))
 
 # If DJANGO_SETTINGS_MODULE is unset, default to the local settings
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")

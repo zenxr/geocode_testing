@@ -16,7 +16,7 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path("users/", include("geocache_api.users.urls", namespace="users")),
+    path("users/", include("geocode_api.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -31,7 +31,7 @@ urlpatterns += [
     # DRF auth token
     path("auth-token/", obtain_auth_token),
     path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
-    path("api/geocache/", include("geocache_api.geocache.urls", namespace="geocache")),
+    path("api/geocode/", include("geocode_api.geocode.urls", namespace="geocode")),
     path(
         "api/docs/",
         SpectacularSwaggerView.as_view(url_name="api-schema"),

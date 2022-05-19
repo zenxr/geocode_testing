@@ -6,8 +6,8 @@ from pathlib import Path
 import environ
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
-# geocache_api/
-APPS_DIR = ROOT_DIR / "geocache_api"
+# geocode_api/
+APPS_DIR = ROOT_DIR / "geocode_api"
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
@@ -78,7 +78,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "geocache_api.users",
+    "geocode_api.users",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -87,7 +87,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "geocache_api.contrib.sites.migrations"}
+MIGRATION_MODULES = {"sites": "geocode_api.contrib.sites.migrations"}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "geocache_api.users.context_processors.allauth_settings",
+                "geocode_api.users.context_processors.allauth_settings",
             ],
         },
     }
@@ -266,13 +266,13 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = "geocache_api.users.adapters.AccountAdapter"
+ACCOUNT_ADAPTER = "geocode_api.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
-ACCOUNT_FORMS = {"signup": "geocache_api.users.forms.UserSignupForm"}
+ACCOUNT_FORMS = {"signup": "geocode_api.users.forms.UserSignupForm"}
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = "geocache_api.users.adapters.SocialAccountAdapter"
+SOCIALACCOUNT_ADAPTER = "geocode_api.users.adapters.SocialAccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
-SOCIALACCOUNT_FORMS = {"signup": "geocache_api.users.forms.UserSocialSignupForm"}
+SOCIALACCOUNT_FORMS = {"signup": "geocode_api.users.forms.UserSocialSignupForm"}
 
 # django-rest-framework
 # -------------------------------------------------------------------------------
@@ -292,8 +292,8 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # By Default swagger ui is available only to admin user(s). You can change permission classes to change that
 # See more configuration options at https://drf-spectacular.readthedocs.io/en/latest/settings.html#settings
 SPECTACULAR_SETTINGS = {
-    "TITLE": "geocache-api API",
-    "DESCRIPTION": "Documentation of API endpoints of geocache-api",
+    "TITLE": "geocode-api API",
+    "DESCRIPTION": "Documentation of API endpoints of geocode-api",
     "VERSION": "1.0.0",
     "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAdminUser"],
     "SERVERS": [

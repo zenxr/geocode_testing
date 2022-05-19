@@ -26,7 +26,7 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-project = "geocache-api"
+project = "geocode-api"
 copyright = """2022, Cody Stephenson"""
 author = "Cody Stephenson"
 
